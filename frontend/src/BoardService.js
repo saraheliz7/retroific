@@ -6,7 +6,7 @@ export default class BoardService {
     }
 
     createBoard(name){
-        this._axios.post('/api/board', {
+        this._axios.post('http://localhost:8080/api/board', {
             boardName: name
         })
     }
