@@ -1,12 +1,10 @@
 import * as axios from "axios";
+const uuidv4 = require('uuid/v4');
 export default class BoardService {
 
-    constructor() {
-        this._axios = axios;
-    }
-
     createBoard(name){
-        this._axios.post('http://localhost:8080/api/board', {
+        axios.post('http://localhost:8080/api/board', {
+            id: uuidv4(),
             boardName: name
         })
     }

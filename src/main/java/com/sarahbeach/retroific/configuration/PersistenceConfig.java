@@ -45,7 +45,7 @@ public class PersistenceConfig {
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setTypeAliasesPackage("com.sarahbeach.retroific.domain");
+        sessionFactory.setTypeAliasesPackage("com.sarahbeach.retroific.model");
         return sessionFactory.getObject();
     }
 
