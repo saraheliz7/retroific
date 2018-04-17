@@ -1,15 +1,15 @@
 import React from 'react';
-import App from './App';
+import CreateBoard from './CreateBoard';
 import {configure, shallow} from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
-import BoardService from './BoardService';
+import BoardService from '../service/BoardService';
 configure({ adapter: new Adapter() });
-jest.mock('./BoardService');
+jest.mock('../service/BoardService');
 
 
-describe('App component', () => {
+describe('CreateBoard component', () => {
     it('creates a board when create board button is clicked', () => {
-        const subject = shallow(<App/>);
+        const subject = shallow(<CreateBoard/>);
         subject.find("#board-name").simulate("change", {target: {value:"Things About Jeremy"}});
         subject.find(".add-board").simulate("click");
         const [mockInstance] = BoardService.mock.instances;
